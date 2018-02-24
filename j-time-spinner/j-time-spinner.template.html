@@ -1,0 +1,89 @@
+<div>
+    <style>
+        .j-spinner {
+            width: 160px;
+            height: 32px;
+            border: 1px solid #ccc;
+        }
+
+        input {
+            /*float: left;*/
+            padding: 2px;
+            width: 26px;
+            height: 100%;
+            box-sizing: border-box;
+            outline: none;
+            color: #333;
+            background-color: #fff;
+            text-align: right;
+            border: 0;
+        }
+
+        .j-spinner:hover {
+            border: 1px solid #999;
+        }
+
+        .j-spinner:active {
+            border: 1px solid #39f;
+        }
+
+        .j-spinner:focus {
+            border: 1px solid #39f;
+        }
+
+        .j-spinner-btn-group {
+            position: relative;
+            width: 20px;
+            float: right;
+        }
+
+        .j-spinner-btn-element {
+            position: relative;
+            width: 20px;
+            height: 16px;
+        }
+
+        .j-spinner-arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            right: 7px;
+        }
+
+        .j-spinner-arrow.up {
+            border-bottom: 5px solid #777;
+            bottom: 2px;
+        }
+
+        .j-spinner-btn-element:hover .j-spinner-arrow.up {
+            border-bottom: 5px solid #0af;
+        }
+
+        .j-spinner-arrow.down {
+            border-top: 5px solid #777;
+            top: 2px;
+        }
+
+        .j-spinner-btn-element:hover .j-spinner-arrow.down {
+            border-top: 5px solid #0af;
+        }
+    </style>
+    <div class="j-spinner" tabindex="0">
+        <input ng-if="show.h" ng-model="showValue.h" ng-change="change()" ng-focus="focus($event,'h')" />
+        <span ng-if="show.m">:</span>
+        <input ng-if="show.m" ng-model="showValue.m" ng-change="change()" ng-focus="focus($event,'m')" />
+        <span ng-if="show.s">:</span>
+        <input ng-if="show.s" ng-model="showValue.s" ng-change="change()" ng-focus="focus($event,'s')" />
+
+        <div class="j-spinner-btn-group">
+            <div class="j-spinner-btn-element" ng-click="add()">
+                <div class="j-spinner-arrow up"></div>
+            </div>
+            <div class="j-spinner-btn-element" ng-click="minus()">
+                <div class="j-spinner-arrow down"></div>
+            </div>
+        </div>
+    </div>
+</div>
