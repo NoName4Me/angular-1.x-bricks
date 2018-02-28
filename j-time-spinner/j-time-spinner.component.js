@@ -1,4 +1,4 @@
-define([], function() {
+(function() {
     var directive = function($timeout) {
         function format2FixedStr(srcValue, length) {
             var formatted = new Array(length).join("0") + srcValue;
@@ -101,5 +101,5 @@ define([], function() {
             "replace": true
         }
     };
-    angular.module("rootApp").directive("jTimeSpinner", directive)
-});
+    angular.module("rootApp").directive("jTimeSpinner", directive);
+})();
